@@ -1,6 +1,6 @@
 {
   "name": "coa-error",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "error component for coa",
   "keywords": [
     "coajs",
@@ -21,7 +21,7 @@
     "npm-publish": "yarn build && yarn version --patch && cp package.json README.md dist && cd dist && npm publish"
   },
   "dependencies": {
-    "coa-echo": "^1.0.8"
+    "coa-echo": "*"
   },
   "devDependencies": {
     "@types/node": "^14.0.5",

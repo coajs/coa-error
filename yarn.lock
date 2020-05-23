@@ -7,7 +7,7 @@
   resolved "https://registry.npmjs.org/@types/node/-/node-14.0.5.tgz#3d03acd3b3414cf67faf999aed11682ed121f22b"
   integrity sha512-90hiq6/VqtQgX8Sp0EzeIsv3r+ellbGj4URKj5j30tLlZvRUpnAe9YbYnjl3pJM93GyXU0tghHhvXHq+5rnCKA==
 
-coa-echo@^1.0.8:
+coa-echo@*:
   version "1.0.8"
   resolved "https://registry.npmjs.org/coa-echo/-/coa-echo-1.0.8.tgz#0347b947d37d68d03b9058f822dc0f65499210a8"
   integrity sha512-0ap+N+merkETH4QzP81GTUv96t7SWfwiYrhhxW+kmR6Te7GculaklomRsmgBN//5lIif5Gd/OCt8l8r7igrfMA==
