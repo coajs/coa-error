@@ -3,11 +3,23 @@ export class CoaError extends Error {
   name = 'CoaError'
 
   code: string
-  flag: string
+  stdout: boolean
 
-  constructor (code: string, message: string, flag: string = '') {
+  constructor (code: string, message: string, stdout: boolean = true) {
     super(message)
     this.code = code
-    this.flag = flag
+    this.stdout = stdout
+  }
+
+  static message (code: string, message: string): never {
+    throw new CoaError(code, message, false)
+  }
+
+  static throw (code: string, message: string): never {
+    throw new CoaError(code, message)
+  }
+
+  throw (): never {
+    throw this
   }
 }
