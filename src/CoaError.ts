@@ -18,8 +18,4 @@ export class CoaError extends Error {
   static throw (code: string, message: string): never {
     throw new CoaError(code, message)
   }
-
-  throw (): never {
-    throw this
-  }
 }
