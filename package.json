@@ -1,28 +1,35 @@
 {
   "name": "coa-error",
-  "version": "1.1.3",
+  "version": "0.0.0",
   "description": "error component for coa",
   "keywords": [
     "coajs",
     "coa",
+    "coa-error",
     "error",
     "die"
   ],
   "license": "MIT",
   "author": "Aex",
-  "homepage": "https://github.com/coajs/coa-error",
+  "homepage": "https://github.com/coajs",
   "repository": {
     "type": "git",
     "url": "https://github.com/coajs/coa-error.git"
   },
   "scripts": {
     "dev": "tsc -w",
-    "build": "rm -rf dist && tsc && cp package.json dist",
-    "npm-publish": "yarn build && yarn version --patch && cp package.json README.md dist && cd dist && npm publish"
+    "build": "rm -rf dist && tsc",
+    "test": "mocha dist/test",
+    "test:watch": "mocha dist/test --watch",
+    "npm-publish": "yarn build && yarn version --patch && cp package.json *.md dist/src && cd dist/src && npm publish"
   },
   "dependencies": {},
   "devDependencies": {
-    "@types/node": "^14.14.33",
-    "typescript": "^4.2.3"
+    "@types/chai": "^4.2.17",
+    "@types/mocha": "^8.2.2",
+    "@types/node": "^15.0.1",
+    "chai": "^4.3.4",
+    "mocha": "^8.3.2",
+    "typescript": "^4.2.4"
   }
 }
