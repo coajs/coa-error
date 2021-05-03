@@ -17,11 +17,11 @@
     "url": "https://github.com/coajs/coa-error.git"
   },
   "scripts": {
-    "dev": "tsc -w",
-    "build": "rm -rf dist && tsc",
-    "test": "mocha dist/test",
+    "dev:watch": "tsc -w",
     "test:watch": "mocha dist/test --watch",
-    "npm-publish": "yarn build && yarn version --patch && cp package.json *.md dist/src && cd dist/src && npm publish"
+    "build": "rm -rf dist* && tsc && cp package.json *.md dist/src",
+    "test": "mocha dist/test",
+    "publish-prerelease": "yarn build && cd dist/src && yarn version --prerelease && yarn publish"
   },
   "dependencies": {},
   "devDependencies": {
