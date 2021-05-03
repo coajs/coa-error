@@ -59,5 +59,4 @@ CoaError.throw('User.UserAgeInvaild','用户年龄错误')
 CoaError.message('User.UserAgeInvaild','用户年龄错误')
 
 ```
-> 代码中的die和其他文件是旧版用法，后续版本会逐步废弃，不要使用
 
