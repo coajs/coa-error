@@ -19,8 +19,9 @@
   "scripts": {
     "dev:watch": "tsc -w",
     "test:watch": "mocha dist/test --watch",
-    "build": "rm -rf dist* && tsc && cp package.json *.md dist/src",
     "test": "mocha dist/test",
+    "build": "rm -rf dist* && tsc && cp package.json *.md dist/src",
+    "sync": "curl -X PUT 'https://npm.taobao.org/sync/coa-error?sync_upstream=true'",
     "publish-prerelease": "yarn build && cd dist/src && yarn version --prerelease && yarn publish"
   },
   "dependencies": {},
