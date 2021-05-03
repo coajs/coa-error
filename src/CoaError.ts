@@ -11,6 +11,14 @@ export class CoaError extends Error {
     this.stdout = stdout
   }
 
+  toJSON () {
+    return { name: this.name, code: this.code, message: this.message }
+  }
+
+  toString () {
+    return `${this.name} ${this.code} ${this.message}`
+  }
+
   static message (code: string, message: string): never {
     throw new CoaError(code, message, false)
   }
