@@ -12,6 +12,23 @@ COA框架基础错误类，用于统一化错误提示
 yarn add coa-error
 ```
 
+### 使用示例
+
+```typescript
+import { CoaError } from 'coa-error'
+
+
+// 定义并抛出一个新的错误
+throw new CoaError('User.UserAgeInvaild','用户年龄错误')
+
+// 使用静态方法抛出（可以当做一个语法糖）
+CoaError.throw('User.UserAgeInvaild','用户年龄错误')
+
+// 也可以使用message方法，仅仅提示不在stdio显示（由coa上层框架控制，框架外部调用等同于throw）
+CoaError.message('User.UserAgeInvaild','用户年龄错误')
+
+```
+
 ### 数据结构
 
 COA错误要求必须定义如下统一参数：
@@ -42,21 +59,3 @@ class CoaError extends Error {
   }
 }
 ```
-
-### 使用示例
-
-```typescript
-import { CoaError } from 'coa-error'
-
-
-// 定义并抛出一个新的错误
-throw new CoaError('User.UserAgeInvaild','用户年龄错误')
-
-// 使用静态方法抛出（可以当做一个语法糖）
-CoaError.throw('User.UserAgeInvaild','用户年龄错误')
-
-// 也可以使用message方法，仅仅提示不在stdio显示（由coa上层框架控制，框架外部调用等同于throw）
-CoaError.message('User.UserAgeInvaild','用户年龄错误')
-
-```
-
