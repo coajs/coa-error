@@ -2,7 +2,6 @@ import { expect } from 'chai'
 import { CoaError } from '../src'
 
 describe('CoaError class test', function () {
-
   it('new CoaError() instance', function () {
     expect(new CoaError('error code', 'error message')).be.instanceOf(CoaError)
   })
@@ -15,7 +14,6 @@ describe('CoaError class test', function () {
   })
 
   it('instance property', function () {
-
     const code = new CoaError('error code', 'error message')
     const code2 = new CoaError('error code', 'error message', false)
 
@@ -49,7 +47,6 @@ describe('CoaError class test', function () {
   })
 
   it('instance toJSON()', function () {
-
     const err = new CoaError('error code', 'error message')
     const string = JSON.stringify(err)
     const object = JSON.parse(string)
@@ -59,10 +56,8 @@ describe('CoaError class test', function () {
   })
 
   it('instance toString()', function () {
-
     const err = new CoaError('error code', 'error message')
 
     expect('' + err).eq('CoaError error code error message')
   })
-
 })

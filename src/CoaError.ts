@@ -1,5 +1,4 @@
 export class CoaError extends Error {
-
   name = 'CoaError'
 
   code: string

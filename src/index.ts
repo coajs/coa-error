@@ -1,3 +1,3 @@
-export { CoaError } from './CoaError'
-export { CoaContextError, die } from './die'
+import { CoaError } from './CoaError'
 
+export { CoaError }

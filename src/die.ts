@@ -1,5 +1,4 @@
 export class CoaContextError extends Error {
-
   code: number
   mark: number | string
   custom: string
@@ -17,7 +16,6 @@ export class CoaContextError extends Error {
 }
 
 export const die = new class {
-
   hint (message: string, code: number = 400, mark: number | string = 0): never {
     throw new CoaContextError({ code, mark, message })
   }
@@ -33,4 +31,4 @@ export const die = new class {
   missing (name: string) {
     return this.error('缺少' + name + '参数')
   }
-}
+}()
