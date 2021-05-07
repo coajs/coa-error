@@ -10,25 +10,25 @@ export class CoaContextError extends Error {
     this.message = e.message
     this.code = e.code
     this.mark = e.mark
-    this.custom = e.custom || ''
-    this.stdout = e.stdout || false
+    this.custom = e.custom ?? ''
+    this.stdout = e.stdout ?? false
   }
 }
 
 export const die = new class {
-  hint (message: string, code: number = 400, mark: number | string = 0): never {
+  hint (message: string, code = 400, mark: number | string = 0): never {
     throw new CoaContextError({ code, mark, message })
   }
 
-  error (message: string, code: number = 400, mark: number | string = 0): never {
+  error (message: string, code = 400, mark: number | string = 0): never {
     throw new CoaContextError({ code, mark, message, stdout: true })
   }
 
-  custom (custom: string, message: string, code: number = 400, mark: number | string = 0): never {
+  custom (custom: string, message: string, code = 400, mark: number | string = 0): never {
     throw new CoaContextError({ code, mark, message, custom })
   }
 
-  missing (name: string) {
+  missing (name: string): never {
     return this.error('缺少' + name + '参数')
   }
 }()

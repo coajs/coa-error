@@ -7,7 +7,7 @@ describe('CoaError class test', function () {
   })
 
   it('throw new CoaError()', function () {
-    function run () {
+    function run (): never {
       throw new CoaError('error code', 'error message')
     }
     expect(run).throw(CoaError)
@@ -25,7 +25,7 @@ describe('CoaError class test', function () {
   })
 
   it('CoaError.thorw()', function () {
-    function run () {
+    function run (): never {
       CoaError.throw('error code', 'error message')
     }
     expect(run).throw(CoaError)
@@ -36,7 +36,7 @@ describe('CoaError class test', function () {
   })
 
   it('CoaError.message()', function () {
-    function run () {
+    function run (): never {
       CoaError.message('error code', 'error message')
     }
     expect(run).throw(CoaError)
@@ -58,6 +58,6 @@ describe('CoaError class test', function () {
   it('instance toString()', function () {
     const err = new CoaError('error code', 'error message')
 
-    expect('' + err).eq('CoaError error code error message')
+    expect(err.toString()).eq('CoaError error code error message')
   })
 })
