@@ -17,11 +17,11 @@
     "url": "https://github.com/coajs/coa-error.git"
   },
   "scripts": {
-    "dev:watch": "tsc -w",
-    "test:watch": "mocha dist/test --watch",
+    "dev": "tsc -w",
     "test": "mocha dist/test",
-    "lint:fix": "yarn lint --fix",
+    "test:dev": "mocha dist/test --watch",
     "lint": "eslint . --ext .ts",
+    "lint:fix": "yarn lint --fix",
     "build": "rm -rf dist* && tsc && cp package.json *.md dist/src",
     "sync": "curl -X PUT 'https://npm.taobao.org/sync/coa-error?sync_upstream=true'",
     "publish-prerelease": "yarn build && cd dist/src && yarn version --prerelease && yarn publish"

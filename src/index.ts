@@ -1,3 +1,2 @@
-import { CoaError } from './CoaError'
-
-export { CoaError }
+export { CoaError } from './CoaError'
+export { die } from './die'
