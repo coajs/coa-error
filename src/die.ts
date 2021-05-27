@@ -4,7 +4,7 @@ export class CoaContextError extends Error {
   custom: string
   stdout: boolean
 
-  constructor (e: { message: string, code: number, mark: number | string, custom?: string, stdout?: boolean }) {
+  constructor(e: { message: string; code: number; mark: number | string; custom?: string; stdout?: boolean }) {
     super()
     this.name = 'CoaContextError'
     this.message = e.message
@@ -15,20 +15,20 @@ export class CoaContextError extends Error {
   }
 }
 
-export const die = new class {
-  hint (message: string, code = 400, mark: number | string = 0): never {
+export const die = new (class {
+  hint(message: string, code = 400, mark: number | string = 0): never {
     throw new CoaContextError({ code, mark, message })
   }
 
-  error (message: string, code = 400, mark: number | string = 0): never {
+  error(message: string, code = 400, mark: number | string = 0): never {
     throw new CoaContextError({ code, mark, message, stdout: true })
   }
 
-  custom (custom: string, message: string, code = 400, mark: number | string = 0): never {
+  custom(custom: string, message: string, code = 400, mark: number | string = 0): never {
     throw new CoaContextError({ code, mark, message, custom })
   }
 
-  missing (name: string): never {
+  missing(name: string): never {
     return this.error('缺少' + name + '参数')
   }
-}()
+})()

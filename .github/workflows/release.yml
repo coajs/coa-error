@@ -6,9 +6,7 @@ on:
       - published
 
 jobs:
-
   publish:
-
     name: Publish
 
     if: github.repository_owner == 'coajs'
@@ -37,8 +35,7 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ secrets.AEX_NPM_TOKEN }}
         run: |
-          cd dist/src
-          yarn publish
+          yarn publish dist/src
 
       - name: Sync
         run: |
