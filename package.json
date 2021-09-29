@@ -1,7 +1,7 @@
 {
   "name": "coa-error",
   "version": "0.0.0",
-  "description": "error component for coa",
+  "description": "Basic Error Library for coajs",
   "keywords": [
     "coajs",
     "coa",
