@@ -21,7 +21,7 @@
     "test": "mocha dist/test",
     "test:dev": "mocha dist/test --watch",
     "lint": "eslint . ",
-    "prettier": "prettier -w .",
+    "format": "prettier -w .",
     "build": "rm -rf dist* && tsc && cp package.json *.md dist/src",
     "sync": "curl -X PUT 'https://npm.taobao.org/sync/coa-error?sync_upstream=true'"
   },
