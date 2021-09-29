@@ -3,6 +3,13 @@
 {
   "name": "coajs",
   "image": "mcr.microsoft.com/vscode/devcontainers/javascript-node",
-  "postCreateCommand": "yarn",
-  "extensions": ["mutantdino.resourcemonitor", "esbenp.prettier-vscode", "dbaeumer.vscode-eslint", "eamodio.gitlens"]
+  "mounts": ["source=container-share-cache,target=/usr/local/share/.cache"],
+  "extensions": [
+    "mutantdino.resourcemonitor",
+    "github.vscode-pull-request-github",
+    "eamodio.gitlens",
+    "esbenp.prettier-vscode",
+    "dbaeumer.vscode-eslint",
+    "visualstudioexptteam.vscodeintellicode"
+  ]
 }
