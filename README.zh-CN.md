@@ -5,39 +5,39 @@
 [![npm downloads](https://img.shields.io/npm/dm/coa-error.svg?style=flat-square)](http://npm-stat.com/charts.html?package=coa-error)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](https://github.com/coajs/coa-error/pulls)
 
-English | [简体中文](README.zh-CN.md)
+[English](README.md) | 简体中文
 
-Basic Error Library for coajs, used to unify error messages
+COA 框架基础错误类，用于统一化错误提示
 
-### Install
+### 安装
 
 ```shell
 yarn add coa-error
 ```
 
-### Example
+### 使用示例
 
 ```typescript
 import { CoaError } from 'coa-error'
 
-// Define and throw a new error
-throw new CoaError('User.UserAgeInvaild', 'User age error')
+// 定义并抛出一个新的错误
+throw new CoaError('User.UserAgeInvaild', '用户年龄错误')
 
-// Thrown using a static method (can be used as a syntax sugar)
-CoaError.throw('User.UserAgeInvaild', 'User age error')
+// 使用静态方法抛出（可以当做一个语法糖）
+CoaError.throw('User.UserAgeInvaild', '用户年龄错误')
 
-// You can also use the message method, which only prompts but does not display in stdio (controlled by the coa upsteam framework, other calls are equivalent to throw)
-CoaError.message('User.UserAgeInvaild', 'User age error')
+// 也可以使用message方法，仅仅提示但不在stdio显示（由coa上层框架控制，其他方式调用等同于throw）
+CoaError.message('User.UserAgeInvaild', '用户年龄错误')
 ```
 
-### Data structure
+### 数据结构
 
-coa error requires that the following uniform parameters must be defined:
+COA 错误要求必须定义如下统一参数：
 
-- **code** error code
-- **message** error message
+- **code** 错误代码
+- **message** 错误消息
 
-The class is defined as follows:
+类定义如下：
 
 ```typescript
 class CoaError extends Error {
