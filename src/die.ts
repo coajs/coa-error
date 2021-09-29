@@ -4,7 +4,13 @@ export class CoaContextError extends Error {
   custom: string
   stdout: boolean
 
-  constructor(e: { message: string; code: number; mark: number | string; custom?: string; stdout?: boolean }) {
+  constructor(e: {
+    message: string
+    code: number
+    mark: number | string
+    custom?: string
+    stdout?: boolean
+  }) {
     super()
     this.name = 'CoaContextError'
     this.message = e.message
@@ -24,7 +30,12 @@ export const die = new (class {
     throw new CoaContextError({ code, mark, message, stdout: true })
   }
 
-  custom(custom: string, message: string, code = 400, mark: number | string = 0): never {
+  custom(
+    custom: string,
+    message: string,
+    code = 400,
+    mark: number | string = 0
+  ): never {
     throw new CoaContextError({ code, mark, message, custom })
   }
 

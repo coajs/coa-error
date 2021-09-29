@@ -51,8 +51,14 @@ describe('CoaError class test', function () {
     const string = JSON.stringify(err)
     const object = JSON.parse(string)
 
-    expect(string).eq('{"name":"CoaError","code":"error code","message":"error message"}')
-    expect(object).deep.equal({ name: 'CoaError', code: 'error code', message: 'error message' })
+    expect(string).eq(
+      '{"name":"CoaError","code":"error code","message":"error message"}'
+    )
+    expect(object).deep.equal({
+      name: 'CoaError',
+      code: 'error code',
+      message: 'error message',
+    })
   })
 
   it('instance toString()', function () {
